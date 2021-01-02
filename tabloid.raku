@@ -1,4 +1,3 @@
-#!/usr/bin/env perl6
 use lib '.';
 use tabloidActions;
 use tabloidGrammar;

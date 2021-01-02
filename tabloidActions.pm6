@@ -5,8 +5,15 @@ class tabloidActions {
         %var{~$<variable-name>} = +$<value>;
     }
 
-    method function-call($/) {
-        say %var{$<variable-name>} if $<function-name> eq 'YOU WON\'T WANT TO MISS';
+#    method function-call($/) {
+#    }
+
+    method output($/) {
+        if $<variable-name> {
+            say %var{$<variable-name>}
+        } else {
+            say $<value>
+        }
     }
 
     method number($/) {

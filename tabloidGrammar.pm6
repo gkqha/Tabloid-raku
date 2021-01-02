@@ -5,13 +5,23 @@ grammar tabloidGrammar {
     rule statement {
         | <variable-declaration>
         | <function-call>
+        | <output>
    }
+
     rule variable-declaration {
         'EXPERTS CLAIM' <variable-name> 'TO BE' <value>
    }
 
     rule function-call {
-        <function-name> <variable-name>
+        <function-name> 'OF' [
+        | <variable-name>
+        | <value>]
+    }
+
+    rule output {
+        'YOU WON\'T WANT TO MISS' [
+        | <variable-name>
+        | <value>]
     }
 
     rule value {
@@ -23,7 +33,7 @@ grammar tabloidGrammar {
     }
 
     token function-name {
-        'YOU WON\'T WANT TO MISS'
+        \w+
     }
 
     #number
