@@ -25,7 +25,8 @@ grammar tabloidGrammar {
     }
 
     rule value {
-        | <Number>
+        <Number>
+        | <Boolean>
     }
 
     token variable-name {
@@ -62,5 +63,19 @@ grammar tabloidGrammar {
 
     token exponent {
         <exp> <sign>? <integer>
+    }
+
+    #Boolean
+    token Boolean {
+        <true>
+        | <false>
+    }
+
+    token true {
+        'TOTALLY RIGHT'
+    }
+
+    token false {
+        'COMPLETELY WRONG'
     }
 }
